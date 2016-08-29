@@ -59,7 +59,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   function evenFinder(nums){
   	var evenNums = [];
     for (var i = 0; i < nums.length; i++) {
-       if((nums[i] % 2) != 1){
+       if(nums[i] % 2 === 0){
          evenNums.push(nums[i]);
        }
     }
@@ -81,7 +81,7 @@ function divider(numbersArray){
   var oddNumbers = [];
   var totalsArray = [];
   for (var i = 0; i < numbersArray.length; i++) {
-     if((numbersArray[i] % 2) != 1){
+     if((numbersArray[i] % 2) !== 1){
        evenNumbers.push(numbersArray[i]);
      }else {
        oddNumbers.push(numbersArray[i]);
@@ -122,7 +122,9 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+  function reverse(str){
+    return  str.split("").reverse().join("");
+  }
 
 //Next Problem
 
@@ -144,6 +146,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+function removeItem(myGroceryList, removeItem) {
+  if (!Array.isArray(myGroceryList)) {
+    return [];
+  }
+
+  var updatedGroceryList = [];
+  for (var i = 0; i < myGroceryList.length; i++) {
+      if(myGroceryList[i] !== removeItem){
+        updatedGroceryList.push(myGroceryList[i]);
+      }
+  }
+  return updatedGroceryList;
+}
+function addItem(myGroceryList, itemAdd){
+      myGroceryList = myGroceryList.push(itemAdd);
+      return myGroceryList;
+}
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
