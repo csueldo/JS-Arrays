@@ -43,7 +43,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+function reversedLooper(letters){
+  for(var i = letters.length - 1; i >= 0; i--){
+    alert(letters[i]);
+  }
+}
 
 //Next Problem
 
@@ -52,7 +56,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-
+  function evenFinder(nums){
+  	var evenNums = [];
+    for (var i = 0; i < nums.length; i++) {
+       if((nums[i] % 2) != 1){
+         evenNums.push(nums[i]);
+       }
+    }
+    return evenNums;
+  }
 
 //Next problem
 
@@ -64,8 +76,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
-
-
+function divider(numbersArray){
+	var evenNumbers = [];
+  var oddNumbers = [];
+  var totalsArray = [];
+  for (var i = 0; i < numbersArray.length; i++) {
+     if((numbersArray[i] % 2) != 1){
+       evenNumbers.push(numbersArray[i]);
+     }else {
+       oddNumbers.push(numbersArray[i]);
+      }
+  }
+  totalsArray.push(evenNumbers, oddNumbers);
+  return totalsArray;
+}
 //Next Problem
 
 
@@ -78,7 +102,15 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+function finder(someArray){
+  var randomNum = getRandomArbitrary();
+  for (var i = 0; i < someArray.length; i++) {
+    if(someArray[i] === randomNum){
+      return true;
+    }
+  }
+  return false;
+}
   //Code Here
 
 
